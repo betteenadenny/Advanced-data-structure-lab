@@ -1,9 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define max 20
-int queue[max];
-int rear=-1;
-int front =-1;
+#define max 100
+int queue[max], rear=-1, front =-1;
 void enqueue();
 void dequeue();
 void display();
@@ -27,11 +25,10 @@ int main()
 					 break;
 			case 3 : display();
 					 break;
-			case 4 :  printf("\n\t EXIT POINT ");
-                			 break;
-            		default:
-				  printf ("\n\t Please Enter a Valid Choice(1/2/3/4)");
-                }
+			case 4 : printf("\n\t EXIT POINT ");
+					 exit(0);
+            default:printf ("\n\t Please Enter a Valid Choice(1/2/3/4 )");
+        }
 	}while(option != 4);
 	return 0;
 }
@@ -40,43 +37,56 @@ void enqueue()
 {
 	int data;
 	printf("Enter element : ");
-	scanf("%d",&data);
-	if(front == -1)
-	{
-		front++;
-	}
+	scanf("%d",&data);	
 	if(rear == max-1)
 	{
 		printf("Queue is full.");
-		exit(0);
-	}	
-	rear++;
-	queue[rear] = data;
+	}
+	else if(front == -1 && rear == -1)
+	{
+		rear++;
+		front++;
+		queue[rear] = data;
+	}
+	else
+	{
+		rear++;
+		queue[rear] = data;
+	}
 }
 
 void dequeue()
 {
-	if(rear==-1)
+	if(rear == -1 && front == -1)
 	{
 		printf("Queue is empty...");
-		exit(0);
 	}
-	int val;
-	val = queue[front];
-	printf("dequeue : %d",val);
-	front++;
-	if(front>rear)
+	else if (front == rear)
 	{
-		front=rear=-1;
+		printf("dequeue : %d",queue[front]);
+		rear=-1;
+		front =-1;
+	}
+	else
+	{
+		printf("dequeue : %d",queue[front]);
+		front++;
 	}
 }
 
 void display()
 {
 	int i;
-	printf("\nThe elements in the queue are:\n");
-	for(i=front; i<=rear; i++)
+	if (rear == -1 && front == -1)
 	{
-		printf("%d\t",queue[i]);
+		printf("Queue is empty");
+	}
+	else 
+	{
+		printf("\nThe elements in the queue are:\n");
+		for(i=front; i<=rear; i++)
+		{
+			printf("%d\t",queue[i]);
+		}
 	}
 }
