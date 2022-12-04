@@ -74,6 +74,7 @@ void dequeue()
 void display()
 {
 	int i;
+	printf("\nThe elements in the queue are:\n");
 	for(i=front; i<=rear; i++)
 	{
 		printf("%d\t",queue[i]);
