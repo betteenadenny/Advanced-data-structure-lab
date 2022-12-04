@@ -30,7 +30,7 @@ int main()
 			case 4 :  printf("\n\t EXIT POINT ");
                 			 break;
             		default:
-				  printf ("\n\t Please Enter a Valid Choice(1/2/3/4/5)");
+				  printf ("\n\t Please Enter a Valid Choice(1/2/3/4)");
                 }
 	}while(option != 4);
 	return 0;
