@@ -4,7 +4,7 @@ struct node{
 	int data;
 	struct node *next;
 }*temp,*front,*rear;
-void enqueue();
+void enqueue()
 {
 	struct node *newnode;
 	newnode=(struct node*)malloc(sizeof(struct node));
@@ -23,7 +23,7 @@ void enqueue();
 		rear=newnode;
 	}
 }
-void dequeue();
+void dequeue()
 {
 	if(front==NULL)
 	printf("Queue is empty");
@@ -54,7 +54,7 @@ void display()
 void main()
 {
 front=rear=NULL
-int choice;
+int choice=0;
 while(choice!=4)
 {
 	printf("1.Enqueue\n 2.Dequeue\n 3.Display\n 4.Exit");
