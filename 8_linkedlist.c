@@ -14,7 +14,7 @@ void begin_delete();
 void last_delete();  
 void random_delete();  
 void display();  
-void search();  
+  
 void main ()  
 {  
     int choice =0;  
@@ -24,7 +24,7 @@ void main ()
         printf("\nChoose one option from the following list ...\n");  
         printf("\n===============================================\n");  
         printf("\n1.Insert in begining\n2.Insert at last\n3.Insert at any random location\n4.Delete from Beginning\n  
-        5.Delete from last\n6.Delete node after specified location\n7.Search for an element\n8.Show\n9.Exit\n");  
+        5.Delete from last\n6.Delete node after specified location\n7.Show\n8.Exit\n");  
         printf("\nEnter your choice?\n");         
         scanf("\n%d",&choice);  
         switch(choice)  
@@ -47,13 +47,11 @@ void main ()
             case 6:  
             random_delete();          
             break;  
+            
             case 7:  
-            search();         
+            display(); 
             break;  
             case 8:  
-            display();        
-            break;  
-            case 9:  
             exit(0);  
             break;  
             default:  
@@ -208,38 +206,7 @@ void random_delete()
     free(ptr);  
     printf("\nDeleted node %d ",loc+1);  
 }  
-void search()  
-{  
-    struct node *ptr;  
-    int item,i=0,flag;  
-    ptr = head;   
-    if(ptr == NULL)  
-    {  
-        printf("\nEmpty List\n");  
-    }  
-    else  
-    {   
-        printf("\nEnter item which you want to search?\n");   
-        scanf("%d",&item);  
-        while (ptr!=NULL)  
-        {  
-            if(ptr->data == item)  
-            {  
-                printf("item found at location %d ",i+1);  
-                flag=0;  
-            }   
-            else  
-            {  
-                flag=1;  
-            }  
-            i++;  
-            ptr = ptr -> next;  
-        }  
-        if(flag==1)  
-        {  
-            printf("Item not found\n");  
-        }  
-    }     
+
           
 void display()  
 {  
