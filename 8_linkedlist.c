@@ -63,40 +63,40 @@ void main ()
 }  
 void begin_insert()  
 {  
-    struct node *ptr;    
-    ptr = (struct node *) malloc(sizeof(struct node *));  
-    if(ptr == NULL)  
+    struct node *newnode;    
+    newnode = (struct node *) malloc(sizeof(struct node *));  
+    if(next == NULL)  
     {  
         printf("\nOVERFLOW");  
     }  
     else  
     {  
         printf("\nEnter value\n");    
-        scanf("%d",&ptr->data);      
-        ptr->next = head;  
-        head = ptr;  
+        scanf("%d",&newnode->data);      
+        newnode->next = head;  
+        head = newnode;  
         printf("\nNode inserted");  
     }  
       
 }  
 void last_insert()  
 {  
-    struct node *ptr,*temp;  
-    int item;     
-    ptr = (struct node*)malloc(sizeof(struct node));      
-    if(ptr == NULL)  
+    struct node *newnode,*temp;  
+ 
+    newnode = (struct node*)malloc(sizeof(struct node));      
+    if(newnode == NULL)  
     {  
         printf("\nOVERFLOW");     
     }  
     else  
     {  
         printf("\nEnter value?\n");  
-        scanf("%d",&item);  
-        ptr->data = item;  
+        scanf("%d",&newnode->data);  
+        
         if(head == NULL)  
         {  
-            ptr -> next = NULL;  
-            head = ptr;  
+            newnode -> next = NULL;  
+            head = newnode;  
             printf("\nNode inserted");  
         }  
         else  
@@ -106,17 +106,17 @@ void last_insert()
             {  
                 temp = temp -> next;  
             }  
-            temp->next = ptr;  
-            ptr->next = NULL;  
+            temp->next = newnode;  
+            newnode->next = NULL;  
             printf("\nNode inserted");  
           
         }  
     }  
 void random_insert()  
 {  
-    int i,loc,item;   
-    struct node *ptr, *temp;  
-    ptr = (struct node *) malloc (sizeof(struct node));  
+    int i,loc;   
+    struct node *newnode, *temp;  
+    newnode = (struct node *) malloc (sizeof(struct node));  
     if(ptr == NULL)  
     {  
         printf("\nOVERFLOW");  
@@ -124,8 +124,8 @@ void random_insert()
     else  
     {  
         printf("\nEnter element value");  
-        scanf("%d",&item);  
-        ptr->data = item;  
+        scanf("%d",&newnode->data);  
+         
         printf("\nEnter the location after which you want to insert ");  
         scanf("\n%d",&loc);  
         temp=head;  
@@ -139,7 +139,7 @@ void random_insert()
             }  
           
         }  
-        ptr ->next = temp ->next;   
+        newnode ->next = temp ->next;   
         temp ->next = ptr;   
         printf("\nNode inserted");  
     }  
