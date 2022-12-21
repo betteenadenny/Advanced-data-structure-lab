@@ -53,7 +53,7 @@ void peek(){
 		printf("%d",front->data);
 	}
 }
-void main(){
+int main(){
 	int c;
 	do{
 	printf("\n 1.enqueue \n 2.peek \n 3.dequeue \n 4.display \n 5.exit \n");
