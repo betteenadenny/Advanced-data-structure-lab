@@ -48,7 +48,7 @@ void display(){
 	}
 	printf("null\n");
 }
-void main(){
+int main(){
 	int c;
 	do{
 	printf("\n 1.push \n 2.peek \n 3.pop \n 4.display \n 5.exit \n");
