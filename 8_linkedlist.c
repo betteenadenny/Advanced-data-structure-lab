@@ -15,7 +15,7 @@ void last_delete();
 void random_delete();  
 void display();  
   
-void main ()  
+int main ()  
 {  
     int choice =0;  
     while(choice != 9)   
@@ -23,8 +23,8 @@ void main ()
         printf("\n\n*********Main Menu*********\n");  
         printf("\nChoose one option from the following list ...\n");  
         printf("\n===============================================\n");  
-        printf("\n1.Insert in begining\n2.Insert at last\n3.Insert at any random location\n4.Delete from Beginning\n  
-        5.Delete from last\n6.Delete node after specified location\n7.Show\n8.Exit\n");  
+        printf("\n1.Insert in begining\n2.Insert at last\n3.Insert at any random location\n4.Delete from Beginning\n");
+        printf("5.Delete from last\n6.Delete node after specified location\n7.Show\n8.Exit\n");  
         printf("\nEnter your choice?\n");         
         scanf("\n%d",&choice);  
         switch(choice)  
@@ -63,7 +63,7 @@ void begin_insert()
 {  
     struct node *newnode;    
     newnode = (struct node *) malloc(sizeof(struct node *));  
-    if(next == NULL)  
+    if(newnode == NULL)  
     {  
         printf("\nOVERFLOW");  
     }  
@@ -115,7 +115,7 @@ void random_insert()
     int i,loc;   
     struct node *newnode, *temp;  
     newnode = (struct node *) malloc (sizeof(struct node));  
-    if(ptr == NULL)  
+    if(newnode == NULL)  
     {  
         printf("\nOVERFLOW");  
     }  
@@ -138,7 +138,7 @@ void random_insert()
           
         }  
         newnode ->next = temp ->next;   
-        temp ->next = ptr;   
+        temp ->next = ;   
         printf("\nNode inserted");  
     }  
 }  
@@ -206,8 +206,6 @@ void random_delete()
     free(ptr);  
     printf("\nDeleted node %d ",loc+1);  
 }  
-
-          
 void display()  
 {  
     struct node *ptr;  
@@ -224,4 +222,7 @@ void display()
             printf("\n%d",ptr->data);  
             ptr = ptr -> next;  
         }  
-    }  
+    }
+} 
+
+   
