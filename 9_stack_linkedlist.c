@@ -51,7 +51,7 @@ void display(){
 void main(){
 	int c;
 	do{
-	printf("\n 1.queue \n 2.peek \n 3.queue \n 4.display \n 5.exit \n");
+	printf("\n 1.push \n 2.peek \n 3.pop \n 4.display \n 5.exit \n");
 	printf("enter the choice:");
 	scanf("%d",&c);
 	switch(c){
@@ -72,6 +72,7 @@ void main(){
 			break;
 		}
 		case 5:{
+			exit(0);
 			break;
 		}
 		default:{
