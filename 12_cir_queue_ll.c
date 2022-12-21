@@ -53,7 +53,7 @@ void display()
 }
 void main()
 {
-front=rear=NULL
+front=rear=NULL;
 int choice=0;
 while(choice!=4)
 {
