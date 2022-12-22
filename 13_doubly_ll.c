@@ -122,7 +122,7 @@ void display()
 }
 void main()
 {
-    int c;
+    int choice;
     while(1)
     {
         printf("\n1.insertion at beginning\n2.insertion at position\n3.insertion at end\n4.deletion at begining\n5.deletion at position\n6.deletion at end\n7.display\n8.exit\n");
