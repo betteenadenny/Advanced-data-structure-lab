@@ -76,7 +76,8 @@ void begin_insert()
         printf("\nNode inserted");  
     }  
       
-}  
+}
+  
 void last_insert()  
 {  
     struct node *newnode,*temp;  
@@ -109,7 +110,9 @@ void last_insert()
             printf("\nNode inserted");  
           
         }  
-    }  
+    } 
+}
+ 
 void random_insert()  
 {  
     int i,loc;   
@@ -135,10 +138,9 @@ void random_insert()
                 printf("\ncan't insert\n");  
                 return;  
             }  
-          
-        }  
+        } 
         newnode ->next = temp ->next;   
-        temp ->next = ;   
+        temp ->next = newnode;   
         printf("\nNode inserted");  
     }  
 }  
